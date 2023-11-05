@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospitality System</title>
+</head>
+<body>
+<h1>Welcome to the Hospitality System</h1>
+<form action="/add-guest" method="POST">
+    <input type="text" name="name" placeholder="Guest Name" required>
+    <input type="number" name="room_number" placeholder="Room Number" required>
+    <input type="date" name="check_in_date" placeholder="Check-in Date" required>
+    <input type="date" name="check_out_date" placeholder="Check-out Date" required>
+    <button type="submit">Add Guest</button>
+</form>
+<h2>Current Guests:</h2>
+<ul>
+    <% guests.forEach(function(guest) { %>
+        <li><%= guest.name %> - Room <%= guest.room_number %></li>
+    <% }) %>
+</ul>
+</body>
+</html>
